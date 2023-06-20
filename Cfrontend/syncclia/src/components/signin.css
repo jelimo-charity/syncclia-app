@@ -9,5 +9,24 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
  }
+ .formDetails{
+   height: 400px;
+   width: 60%;
+   background-color: aliceblue;
+   border-radius: 10px;
+   display: flex;
+   justify-content: center;
+
+
+
+ }
+.synccliaDetails{
+   background-color: #fff;
+   width: 30%;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}

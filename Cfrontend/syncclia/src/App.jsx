@@ -7,7 +7,6 @@ import Actions from './pages/Actions'
 import Blogs from './pages/Blogs'
 import About from './pages/About'
 import Header from './components/Header'
-import Footer from './components/Footer'
 
 
 
