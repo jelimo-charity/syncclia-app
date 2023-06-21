@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    background-color: silver;
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+}
+.formField{
+    margin: 0 auto;
+    padding-top: 20px;
+}
+h2{
+    color: green;
+    padding: 10px;
+}
+form{
+    gap: 10px;
+    margin: 0 auto;
+    
+}
+input{
+    height: 25px;
+    width: 90%;
+    padding: 10px;
+    margin: 5px;
+
+}
+#btn{
+    width: 40%;
+    margin-left: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    height: 30px;
+}
