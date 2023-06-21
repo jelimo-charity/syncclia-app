@@ -3,7 +3,7 @@ import assert from 'assert'; // assert is a nodejs module that validates if a co
 
 dotenv.config();
 
-const { PORT, HOST, URL, USER, PASSWORD, DATABASE, SERVER } = process.env;
+const { PORT, HOST, URL, USER, PASSWORD, DATABASE, SERVER, JWT_SECRET } = process.env;
 
 const sqlEncrypt = process.env.SQL_ENCRYPTED === "true";
 
@@ -24,7 +24,10 @@ const config = {
             encrypt: sqlEncrypt,
             enableArithAbort: true
         }
-    }
+    },
+    jwt_secret: JWT_SECRET
 };
+
+
 
 export default config;
