@@ -30,6 +30,7 @@ export const synccliaRoutes = (app) =>{
       
     
     app.route('/blogs')
+
       .get(getBlogs)
       .post(createBlog)
 

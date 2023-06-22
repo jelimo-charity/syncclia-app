@@ -13,7 +13,7 @@ export const loginRequired = (req, res, next) => {
 };
 
 export const signup = async (req, res) => {
-  const { UserID, Username, Email, Password } = req.body;
+  const { Username, Email, Password } = req.body;
   const hashedPassword = await bcrypt.hash(Password, 10); // Use async/await instead of bcrypt.hashSync
 
   try {
@@ -28,11 +28,10 @@ export const signup = async (req, res) => {
       res.status(409).json({ message: "User already exists" });
     } else {
       await pool.request()
-        .input('UserID', sql.Int, UserID)
         .input('Username', sql.VarChar, Username)
         .input('Email', sql.VarChar, Email)
         .input('hashedPassword', sql.VarChar, hashedPassword)
-        .query('INSERT INTO Users (UserID, Username, Email, Password) VALUES (@UserID, @Username, @Email, @hashedPassword)');
+        .query('INSERT INTO Users (Username, Email, Password) VALUES (@Username, @Email, @hashedPassword)');
 
       res.status(200).send({ message: 'User created successfully' });
     }

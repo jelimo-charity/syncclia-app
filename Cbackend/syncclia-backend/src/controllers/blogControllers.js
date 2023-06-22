@@ -77,7 +77,7 @@ export const deleteBlog = async (req, res) => {
     try {
         const { BlogID } = req.params;
         await sql.connect(config.sql);
-        await sql.query`DELETE FROM BlogList WHERE BlogID = ${BlogID}`;
+        await sql.query`DELETE FROM Blogs WHERE BlogID = ${BlogID}`;
         res.status(200).json({ message: 'blog deleted successfully' });
     } catch (error) {
         res.status(500).json({ error: 'An error occurred while deleting the blog' });
