@@ -7,6 +7,7 @@ function Header() {
         <Link className='link'to="/about">About</Link>
         <Link className='link' to="/blogs">Blogs</Link>
         <Link className='link' to="/actions">Actions</Link>
+        <Link className='link' to="/register">Register</Link>
 
 
         

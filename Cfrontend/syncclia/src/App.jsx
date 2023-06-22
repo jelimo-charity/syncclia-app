@@ -7,6 +7,7 @@ import Actions from './pages/Actions'
 import Blogs from './pages/Blogs'
 import About from './pages/About'
 import Header from './components/Header'
+import Register from './pages/Register'
 
 
 
@@ -22,6 +23,7 @@ function App() {
       <Route path='/blogs' element = { <Blogs />} />
       <Route path='/about' element = { <About />} />
       <Route path='/notfound' element = { <NotFound />} />
+      <Route path='/register' element = { <Register />} />
 
     </Routes>
     </BrowserRouter>
