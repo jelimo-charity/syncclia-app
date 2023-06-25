@@ -9,17 +9,18 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    /* background-color: silver; */
     /* background-color: aliceblue; */
  }
  .formDetails{
-   height: 400px;
-   width: 60%;
-   background-color: aliceblue;
+   height: 300px;
+   width: 30%;
+   background-color: green;
    border-radius: 10px;
    display: flex;
    justify-content: center;
-
-
+   margin: 0 auto;
+   color: white;
 
  }
 .synccliaDetails{
@@ -30,3 +31,41 @@
    flex-direction: column;
    justify-content: center;
 }
+h2{
+   padding-top: 20px;
+   font-size: 2.5rem;
+   
+}
+input{
+   margin: 0 auto;
+   align-items: center;
+   font-size: 1rem;
+   width: 100%;
+   height: 2rem;
+   padding: 10px;
+   margin: 5px;
+}
+#register-para{
+   padding-top: 20px;
+}
+#submit-btn{
+   width: 60%;
+   margin-left: 70px;
+   border-radius: 5px;
+   border-right-color: black;
+   border-left-color: black;
+   border-bottom: none;
+   border-top: none;
+   background-color: silver;
+   color: green;
+ 
+}
+#btn{
+   padding: 3px;
+   margin-left: 10px;
+   width: 100px;
+   color: green;
+   border: none;
+   border-radius: 5px;
+   background-color: silver;
+};
