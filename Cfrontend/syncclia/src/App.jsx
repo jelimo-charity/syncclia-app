@@ -8,10 +8,14 @@ import Blogs from './pages/Blogs'
 import AboutUs from './pages/AboutUs'
 import Header from './components/Header'
 import Register from './pages/Register'
+import { useContext } from 'react'
+import { Context } from './context/userContext/Context'
 
 
 
 function App() {
+  const {user} = useContext(Context)
+  console.log(user)
 
   return (
     <>
@@ -19,7 +23,7 @@ function App() {
     <Header />
     <Routes>
       <Route path='/' element = { <Home />} />
-      <Route path='/actions' element = { <Actions />} />
+      <Route path='/actions' element = { user ? <Actions /> : <Home />} />
       <Route path='/blogs' element = { <Blogs />} />
       <Route path='/about' element = { <AboutUs />} />
       <Route path='/notfound' element = { <NotFound />} />

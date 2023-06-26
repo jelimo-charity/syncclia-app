@@ -1,0 +1,20 @@
+.sidenav{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    /* float: right; */
+}
+.sidenav-wrapper{
+    padding: 10px;
+    border-right: 1px solid white;
+}
+.sidenav-header{
+    font-size: 2.5rem;
+    border-bottom: 1px solid white;
+    padding-bottom: 50px;
+}
+.sidenav-item{
+    /* color: white; */
+    font-size: 1.6rem;
+}

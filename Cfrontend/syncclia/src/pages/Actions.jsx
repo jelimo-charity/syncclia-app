@@ -1,9 +1,9 @@
-import React from 'react'
+import Action from '../components/action'
 
 function Actions() {
   return (
     <div>
-        <h1>actions</h1>
+        <Action />
       
     </div>
   )

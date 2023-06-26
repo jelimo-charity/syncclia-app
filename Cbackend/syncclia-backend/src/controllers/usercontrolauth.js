@@ -43,66 +43,44 @@ export const signup = async (req, res) => {
 };
 
 
+   
+
+
 export const login = async (req, res) => {
-  
+  try {
     const { Username, Password } = req.body;
 
     let pool = await sql.connect(config.sql);
-    let result = await pool.request()
+    const result = await pool.request()
       .input('Username', sql.VarChar, Username)
       .query('SELECT * FROM Users WHERE Username = @Username');
 
     const user = result.recordset[0];
+
     if (!user) {
       return res.status(401).json({ error: 'no user, Invalid credentials' });
-    } else if(user){
-        if(!bcrypt.compareSync(Password, user.Password)){
-          res.status(401).json({error: 'Authentication failed, wrong password'})
-        };
-      } else{
-        let token = `JWT ${jwt.sign({email: user.Email, Username: user.Username, UserID: user.UserID},
-         ` ${process.env.jwt_secret}`)}`;
-  
-         const { UserID, Username, Email} = user;
-         return res.json({ UserID: UserID, Username: Username, Email: Email, token: token})
+    } else if (user) {
+      const passwordMatch = await bcrypt.compare(Password, user.Password);
+      if (!passwordMatch) {
+        return res.status(401).json({ error: 'Authentication failed, wrong password' });
       }
-    } 
-   
+    }
 
+    const token = jwt.sign(
+      { UserID: user.UserID, Username: user.Username, Email: user.Email },
+      config.jwt_secret,
+      { expiresIn: '1hr' }
+    );
 
-// export const login = async (req, res) => {
-//   try {
-//     const { Username, hashedPassword } = req.body;
-
-//     let pool = await sql.connect(config.sql);
-//     const result = await pool.request()
-//       .input('Username', sql.VarChar, Username)
-//       .query('SELECT * FROM Users WHERE Username = @Username');
-
-//     const user = result.recordset[0];
-
-//     if (!user) {
-//       return res.status(401).json({ error: 'no user, Invalid credentials' });
-//     } else if (user) {
-//       const passwordMatch = await bcrypt.compare(hashedPassword, user.Password);
-//       if (!passwordMatch) {
-//         return res.status(401).json({ error: 'Authentication failed, wrong password' });
-//       }
-//     }
-
-//     const token = jwt.sign(
-//       { UserID: user.UserID, Username: user.Username, Email: user.Email },
-//       config.jwt_secret,
-//       { expiresIn: '1hr' }
-//     );
-
-//     const { UserID, Email } = user;
-//     res.json({ UserID: UserID, Username: Username, Email: Email, token: token });
-//   } catch (error) {
-//     console.error('Error during login:', error);
-//     res.status(500).json({ error: 'Internal server error' });
-//   }
-// };
+    const { UserID, Email } = user;
+    res.json({ UserID: UserID, Username: Username, Email: Email, token: token });
+  } catch (error) {
+    console.error('Error during login:', error);
+    res.status(500).json(error.message);
+  } finally {
+    sql.close();
+  }
+};
 
 
 

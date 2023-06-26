@@ -4,9 +4,13 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import Axios from 'axios'
 import {useNavigate} from 'react-router-dom'
+import { useContext } from 'react'
+import { Context } from '../context/userContext/Context'
 
 
 export default function Signin() {
+  const { user, dispatch } = useContext(Context);
+  console.log(user);
   const navigate = useNavigate();
   const schema = yup.object().shape({
     Username: yup.string().required(),
@@ -20,7 +24,9 @@ export default function Signin() {
     Axios.post("http://localhost:3000/auth/login", data)
     .then(({data})=>{
       if(data.token){
-        alert("logged in")
+      dispatch({type: "LOGIN_SUCCESSFUL", payload: data})
+
+        alert("logged in successfully")
         navigate('/actions')
         
       }
@@ -50,7 +56,7 @@ export default function Signin() {
                 <input type="password" {...register('Password')} placeholder='Password' /><br/>
                 <p> {errors.Password?.message} </p>
                 <input type="submit" id='submit-btn'/> <br/>
-                {/* <p id='register-para'>Dont Have Account? <button id='btn'>Signup</button></p> */}
+                <p id='register-para'>Dont Have Account? <button id='btn' onClick={()=>navigate('./register')}>Signup</button></p>
             </form>
           </div>
       
