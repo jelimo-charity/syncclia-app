@@ -36,7 +36,7 @@ function Sidenav() {
             <div className="sidenav-item" onClick={handleView}> View Actions </div>
         </div>
       
-    </div>
+    // </div>
   )
 }
 
