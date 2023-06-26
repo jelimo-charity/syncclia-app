@@ -1,8 +1,8 @@
 import { createAction, deleteAction, getAction, getActions } from "../controllers/actionControllers.js"
 import { createBlog, deleteBlog, getBlog, getBlogs } from "../controllers/blogControllers.js"
 import { createUser, deleteUser, getUser, getUsers, updateUser } from "../controllers/userControllers.js"
-import { loginRequired, signup } from "../controllers/usercontrolauth.js"
-import { login } from "../controllers/usercontrolauth.js"
+import { loginRequired, signup, login } from "../controllers/usercontrolauth.js"
+// import { login } from "../controllers/usercontrolauth.js"
 
 export const synccliaRoutes = (app) =>{
     // app.route('/users')
