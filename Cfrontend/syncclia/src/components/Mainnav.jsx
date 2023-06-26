@@ -3,7 +3,16 @@ function Mainnav() {
   return (
     <div>
         <div className="mainnav">
-            <h1>main</h1>
+          <div className="mainnav-wrapper">
+            <h2>User Profile</h2>
+          </div>
+          <div className="mainnav-wrapper">
+            <h2>Add Action</h2>
+          </div>
+          <div className="mainnav-wrapper">
+            <h2>View Actions</h2>
+          </div>
+
         </div>
       
     </div>
