@@ -3,55 +3,61 @@ import {useForm} from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import Axios from 'axios'
+import {useNavigate} from 'react-router-dom'
 
 
 export default function Signin() {
+  const navigate = useNavigate();
   const schema = yup.object().shape({
     Username: yup.string().required(),
-    password: yup.string().required()
+    Password: yup.string().required()
   });
   const { register, handleSubmit, formState: {errors}}= useForm({
     resolver: yupResolver(schema)
   }
   );
-  const onSubmit = (data) => {
+  const onSubmit=(data) => {
     Axios.post("http://localhost:3000/auth/login", data)
-    .then(res=> {
-      // if(data.token){
-      //   alert( 'Login suuccessful');
-      // }
-      console.log(res.data)
+    .then(({data})=>{
+      if(data.token){
+        alert("logged in")
+        navigate('/actions')
+        
+      }
     })
-    .catch(err => {
-      console.log(err)
-    })
+    .catch((response)=>{
+      console.log(response);
+
+    } )
   }
-
-
-  
- 
   return (
     <div>
         <div className="container">
           <div className="synccliaDetails">
                 <h1>SyncCliA</h1><br/>
-                <p>A simple way to sync your climate actions with your friends</p>
-                
+                {/* <p>A simple way to sync your climate actions with your friends</p> */}
+                <p>Welcome to SyncCliA,<br/> your go-to destination for climate action inspiration and 
+                  impact!</p>  
+                <p id='join-para'>Join our community of changemakers and be part of the movement driving 
+                  positive change for our planet.</p>
+                 
           </div>
           <div className="formDetails">
-            <form className='form' onSubmit={handleSubmit(onSubmit)}>
-                <h2>Welcome!</h2>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <h2>Login!</h2>
                 <input type="text"{...register('Username')}  placeholder='Username' /><br/>
                 <p>{errors.Username?.message} </p>
-                <input type="password" {...register('password')} placeholder='Password' /><br/>
-                <p> {errors.password?.message} </p>
-                <input type="submit"  value= "Submit" id='submit-btn'/> <br/>
-                <p id='register-para'>Dont Have Account? <button id='btn'>Signup</button></p>
-
+                <input type="password" {...register('Password')} placeholder='Password' /><br/>
+                <p> {errors.Password?.message} </p>
+                <input type="submit" id='submit-btn'/> <br/>
+                {/* <p id='register-para'>Dont Have Account? <button id='btn'>Signup</button></p> */}
             </form>
+          </div>
+      
            </div>
+
         </div>
-    </div>
+  
   )  
 }
 

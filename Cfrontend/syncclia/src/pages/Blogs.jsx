@@ -1,4 +1,4 @@
-
+import './blogs.css'
 function Blogs() {
   return (
     <div>
