@@ -1,3 +1,7 @@
 .mainnav{
     float: left;
 }
+.header{
+    /* color: green; */
+    font-size: 3rem;
+}
