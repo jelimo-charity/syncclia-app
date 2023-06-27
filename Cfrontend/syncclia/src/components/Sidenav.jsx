@@ -26,14 +26,12 @@ function Sidenav() {
             </div>
             <div className="sidenav-wrapper">
 
-                <div className="sidenav-item"> <MdOutlineAddTask/> Add Action </div> 
-                <div className="sidenav-item"> <MdOutlineViewList/> View Actions </div>
+                <div className="sidenav-item" onClick={handleAdd}> <MdOutlineAddTask/> Add Action </div> 
+                <div className="sidenav-item" onClick={handleView}> <MdOutlineViewList/> View Actions </div>
 
             </div>
 
-                <div className="sidenav-item" onClick={handleAdd}> Add Action </div> 
-            </div>
-            <div className="sidenav-item" onClick={handleView}> View Actions </div>
+             </div>
         </div>
       
     // </div>

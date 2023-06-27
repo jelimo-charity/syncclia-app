@@ -5,12 +5,12 @@
 }
 .headline{
     background-color: white;
-    width: 70%;
-    height: 300px;
+    width: 60%;
+    height: 250px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     margin: 0 auto;
     align-items: center;
 
@@ -23,17 +23,21 @@
 .headline p{
     padding: 20px;
     font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
     
 }
 
 .title h1{
-    font-size: 3rem;
+    font-size: 4rem;
    color: green;
    display: flex;
    justify-content: center;
    margin: 0 auto;
-   padding: 20px;
-   margin-top: 30px;
+   padding: 30px;
+   margin-top: 10px;
 
 }
 /* .headline{
@@ -51,3 +55,16 @@ h2{
     display: flex;
     justify-content: center;
 } */
+.whatWeDo{
+    /* width: 70%; */
+    width: 70%;
+    height: 100vh;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    align-items: center;
+    align-content: space-evenly;
+}

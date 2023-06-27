@@ -17,18 +17,22 @@
     /* background-color: aliceblue; */
  }
  .formDetails{
-   height: 300px;
+   height: 350px;
    width: 25%;
-   background-color: rgb(99, 218, 99);
-   /* opacity: 0.9; */
-   border-radius: 10px;
+   background-color: white;
+   opacity: 0.7;
+   border-radius: 5px;
+   border: 2px solid green;
    display: flex;
    justify-content: center;
    margin: 0 auto ;
    margin-right: 300px;
    margin-top: 100px;
-   color: white;
+   color: green;
 
+ }
+ .formDetails:hover{
+   background-color: lightgreen;
  }
  .formDetails h2{
    margin: 10px;
@@ -44,10 +48,11 @@
 }
 .synccliaDetails h1{
    font-size: 4rem;
+   color: green;
 }
 .synccliaDetails p{
-   font-size: 1.5rem;
-   padding: 10px;
+   font-size: 1.8rem;
+   padding: 20px;
 }
 #join-para{
    font-size: 1.2rem;
@@ -72,32 +77,48 @@ input{
    margin: 0 auto;
    align-items: center;
    font-size: 1rem;
-   width: 100%;
+   width: 90%;
    height: 2rem;
    padding: 10px;
    margin: 5px;
+   border-radius: 3px;
 }
 #register-para{
    padding-top: 20px;
 }
 #submit-btn{
+    display: flex;
+    justify-content: center; 
+   /* align-items: center;
+   align-content: center;  */ 
+   margin: 0 auto;
    width: 60%;
-   margin-left: 70px;
+   /* margin-left: 50px; */
    border-radius: 5px;
    border-right-color: black;
    border-left-color: black;
    border-bottom: none;
    border-top: none;
-   background-color: white;
-   color: green;
+   background-color: green;
+   color: white;
+   margin-top: 10px;
+
  
 }
-#btn{
-   padding: 3px;
-   margin-left: 10px;
-   width: 100px;
-   color: green;
+span #btn{
+   display: flex;
+   justify-content: center;
+   margin: 0 auto;
+   padding: 5px;
+   /* margin-left: 10px; */
+   width: 60%;
+   color: white;
    border: none;
    border-radius: 5px;
-   background-color: silver;
+   border-right-color: black;
+   border-left-color: black;
+   border-bottom: none;
+   border-top: none;
+   background-color: green;
+   margin-top: 5px
 };

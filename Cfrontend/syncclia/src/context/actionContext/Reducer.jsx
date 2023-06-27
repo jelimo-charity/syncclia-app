@@ -1,4 +1,4 @@
-export const Reducer = (state, action) => {
+ const Reducer = (state, action) => {
     switch( action.type ){
         case "PROFILE":
             return {
@@ -15,8 +15,10 @@ export const Reducer = (state, action) => {
         default:
             return state;
     }
+ }
+
+export default Reducer;
+
 
     
-    
 
-}

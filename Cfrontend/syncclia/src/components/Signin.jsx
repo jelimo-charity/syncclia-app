@@ -56,7 +56,8 @@ export default function Signin() {
                 <input type="password" {...register('Password')} placeholder='Password' /><br/>
                 <p> {errors.Password?.message} </p>
                 <input type="submit" id='submit-btn'/> <br/>
-                <p id='register-para'>Dont Have Account? <button id='btn' onClick={()=>navigate('./register')}>Signup</button></p>
+                <p id='register-para'>Dont Have Account? </p>
+                <span> <button id='btn' onClick={()=>navigate('./register')}>Signup</button></span>
             </form>
           </div>
       
