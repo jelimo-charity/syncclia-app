@@ -17,14 +17,14 @@ export const synccliaRoutes = (app) =>{
 
     app.route('/actions/:ActionId')
      .get(loginRequired,getAction)
-     .delete(loginRequired,deleteAction)
+     .delete(deleteAction)
      
-    app.route('/blogs/:BlogId')
-     .get(getBlog)
-     .delete(deleteBlog)
+    // app.route('/blogs/:BlogId')
+    //  .get(getBlog)
+    //  .delete(deleteBlog)
 
     app.route('/actions')
-      .get(loginRequired, getActions)
+      .get( loginRequired,getActions)
       .post(loginRequired,createAction)
       
       

@@ -30,13 +30,13 @@ export const getActions = async(req, res)=>{
 
 export const getAction= async (req, res) => {
     try {
-        const { ActionId } = req.params;
+        const { ActionID } = req.params;
         let pool = await sql.connect(config.sql);
         const result = await pool.request()
-            .input("ActionId", sql.Int,ActionId)
+            .input("ActionID", sql.Int,ActionID)
 
 
-            .query("select * from Actions where ActionId = @ActionId");
+            .query("select * from Actions where ActionID = @ActionID");
         !result.recordset[0] ? res.status(404).json({ message: 'action not found' }) :
             res.status(200).json(result.recordset);
     } catch (error) {
@@ -51,15 +51,13 @@ export const getAction= async (req, res) => {
 // // // Create a new action
 export const createAction = async (req, res) => {
     try {
-        const { ActionID, Title, Reflection, UserID} = req.body;
+        const {  Title, Reflection} = req.body;
         let pool = await sql.connect(config.sql);
         await pool.request()
-            .input("ActionID", sql.Int, ActionID)
             .input("Title", sql.VarChar, Title)
             .input("Reflection", sql.Text, Reflection)
-            .input("UserID", sql.Int, UserID)
 
-            .query("INSERT INTO Actions (ActionID, Title, Reflection, UserID) VALUES (@ActionID, @Title, @Reflection, @UserID)");
+            .query("INSERT INTO Actions ( Title, Reflection) VALUES ( @Title, @Reflection)");
         res.status(201).json({ message: 'Action created successfully' });
     } catch (error) {
         console.log(error);
