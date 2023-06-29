@@ -1,0 +1,34 @@
+.blogsContainer{
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+.blogsWrapper{
+    width: 80%;
+    /* border: 2px solid green; */
+    margin: 0 auto;
+}
+.blogCard{
+    border: 1px solid green;
+    padding: 10px;
+    margin: 10px;
+}
+.blogsTitle{
+    font-size: 1.5rem;
+}
+.blogsContent{
+    font-size: 1rem;
+}
+#blogsHeading{
+    display: flex;
+    justify-content: center;
+    color: green;
+}
+#readmoreBtn{
+    height: 30px;
+    width: 100px;
+    background-color: lightgreen;
+    color: white;
+    border-radius: 5px;
+}

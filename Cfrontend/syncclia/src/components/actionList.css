@@ -1,16 +1,35 @@
 .actionCard{
-    height: 150px;
+    height: 300px;
     border: 1px solid white;
     padding: 5px;
+    width: 70%;
     margin: 10px;
 }
 .title{
     color: green;
     font-size: 2rem;
 }
+.reflection{
+    font-size: 16px;
+}
 .cardButtons{
     display: flex;
     flex-direction: row;
     gap: 10px;
     padding: 10px;
+}
+#teamImg{
+    height: 50%;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    margin: o auto;
+    border-radius: 5px;
+
+}
+.deleteBtn{
+    color: red;
+}
+.editBtn{
+    color: green;
 }

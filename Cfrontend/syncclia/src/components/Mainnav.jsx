@@ -24,7 +24,7 @@ function Mainnav() {
           </div>
             ) : ui == 'view' ? (
               <div className="mainnav-wrapper">
-              <h2 className='header'>View Actions</h2>
+              <h4 className='header'> Actions to Combat Climate Effects</h4>
               <ActionList />
             </div>
 

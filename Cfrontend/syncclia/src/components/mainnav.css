@@ -1,5 +1,6 @@
 .mainnav{
     float: left;
+    width: 100%;
 }
 .header{
     /* color: green; */

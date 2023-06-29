@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import NotFound from './pages/NotFound'
 import Home from './pages/Home'
 import Actions from './pages/Actions'
-import Blogs from './pages/Blogs'
+import BlogList from './pages/BlogList'
 import AboutUs from './pages/AboutUs'
 import Header from './components/Header'
 import Register from './pages/Register'
@@ -24,7 +24,7 @@ function App() {
     <Routes>
       <Route path='/' element = { <Home />} />
       <Route path='/actions' element = { user ? <Actions /> : <Home />} />
-      <Route path='/blogs' element = { <Blogs />} />
+      <Route path='/blogs' element = { <BlogList />} />
       <Route path='/about' element = { <AboutUs />} />
       <Route path='/notfound' element = { <NotFound />} />
       <Route path='/register' element = { <Register />} />

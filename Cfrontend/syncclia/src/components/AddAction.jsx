@@ -6,6 +6,7 @@ import Axios from 'axios'
 import { useContext } from 'react'
 import { Context } from '../context/userContext/Context'
 import { apiDomain } from '../utils/utils'
+import gogreen from '../assets/gogreen.jpg'
 function AddAction() {
   const { user } = useContext(Context);
   const schema = yup.object().shape({
@@ -35,6 +36,7 @@ function AddAction() {
   return (
     <div>
         <div className="actionsForm">
+          <img id='gogreenImg' src={gogreen} alt="gogreenImg" />
             <form onSubmit={handleSubmit(onSubmit)}>
               <h3>Title:</h3>
                 <input type="text" placeholder='Title' {...register("Title")} />

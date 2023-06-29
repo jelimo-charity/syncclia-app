@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 import axios from "axios"
+import'./signup.css'
 
 export function Signup() {
   const navigate = useNavigate();
@@ -39,9 +40,10 @@ export function Signup() {
   return (
     <div className='container'>
 
-        <div className="formField">
-            <h2>Welcome to SyncCliA!</h2>
+        <div id="formField">
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
+                <h2>Welcome to SyncCliA!</h2>
+
                 <input type="text" placeholder='Username' { ...register("Username") } /><br/>
                 <p>{errors.Username?.message}</p>
                 <input type="email" placeholder='Email' { ...register ("Email")} /><br/>
