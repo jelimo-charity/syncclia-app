@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { Context } from '../context/actionContext/Context'
 import Profile from './Profile';
 import AddAction from './AddAction';
+import ActionList from './ActionList';
 function Mainnav() {
   const { ui } = useContext(Context)
   // console.log(ui);
@@ -24,6 +25,7 @@ function Mainnav() {
             ) : ui == 'view' ? (
               <div className="mainnav-wrapper">
               <h2 className='header'>View Actions</h2>
+              <ActionList />
             </div>
 
             ) : null

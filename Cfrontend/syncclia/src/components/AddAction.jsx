@@ -15,20 +15,20 @@ function AddAction() {
   const { register, handleSubmit, formState: { errors },reset} = useForm({
     resolver: yupResolver(schema)
   });
-  console.log(user.token);
+  // console.log(user.token);
   const onSubmit = async(data) =>{
     Axios.post(`${apiDomain}/actions`,data,{
       headers: {
-        Authorization: `${user.token}`,
+        "authorization": `${user.token}`,
       }
     }).then((response)=>{
       reset();
       // console.log(user.token);
       console.log(response);
-      // response.data.message && alert(response.data.message)
-    }).catch((error)=>{
-      // alert(response.data.error)
-      console.log(error);
+      response.data.message && alert(response.data.message)
+    }).catch((response)=>{
+      alert(response.data.error)
+      // console.log(error);
     })
 
   }
