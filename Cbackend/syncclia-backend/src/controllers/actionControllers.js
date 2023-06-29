@@ -81,3 +81,33 @@ export const deleteAction = async (req, res) => {
         sql.close();
     }
 };
+
+// Update action
+export const updateAction = async (req, res) => {
+    try {
+      const { ActionID } = req.params;
+      const { Title, Reflection } = req.body;
+  
+      let pool = await sql.connect(config.sql);
+      const result = await pool
+        .request()
+        .input("ActionID", sql.Int, ActionID)
+        .input("Title", sql.VarChar, Title)
+        .input("Reflection", sql.Text, Reflection)
+        .query(
+          "UPDATE Actions SET Title = @Title, Reflection = @Reflection WHERE ActionID = @ActionID"
+        );
+  
+      if (result.rowsAffected[0] === 0) {
+        res.status(404).json({ message: 'Action not found' });
+      } else {
+        res.status(200).json({ message: 'Action updated successfully' });
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ error: 'An error occurred while updating the action' });
+    } finally {
+      sql.close();
+    }
+  };
+  

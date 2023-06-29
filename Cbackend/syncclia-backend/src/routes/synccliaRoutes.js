@@ -1,4 +1,4 @@
-import { createAction, deleteAction, getAction, getActions } from "../controllers/actionControllers.js"
+import { createAction, deleteAction, getAction, getActions, updateAction } from "../controllers/actionControllers.js"
 import { createBlog, deleteBlog, getBlog, getBlogs } from "../controllers/blogControllers.js"
 import { createUser, deleteUser, getUser, getUsers, updateUser } from "../controllers/userControllers.js"
 import { loginRequired, signup, login } from "../controllers/usercontrolauth.js"
@@ -15,17 +15,18 @@ export const synccliaRoutes = (app) =>{
     //  .delete(deleteUser)
 
 
-    app.route('/actions/:ActionId')
+    app.route('/actions/:ActionID')
      .get(loginRequired,getAction)
      .delete(deleteAction)
+     .put(updateAction)
      
     // app.route('/blogs/:BlogId')
     //  .get(getBlog)
     //  .delete(deleteBlog)
 
     app.route('/actions')
-      .get( loginRequired,getActions)
-      .post(loginRequired,createAction)
+      .get( getActions)
+      .post(createAction)
       
       
     
