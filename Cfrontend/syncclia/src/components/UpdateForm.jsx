@@ -38,12 +38,14 @@ function UpdateForm({ setShowEditForm, action, getActions }) {
     <div>
       <div className="updateForm">
         <form className="form">
+          <h2>Title:</h2>
           <input
             type="text"
             name="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
+          <h2>Reflection:</h2>
           <textarea
             name="reflection"
             cols="30"

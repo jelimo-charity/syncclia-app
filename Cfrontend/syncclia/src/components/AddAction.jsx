@@ -44,8 +44,6 @@ function AddAction() {
                 <h3>Reflection:</h3>
                 <textarea name="" id="" cols="50" rows="5" placeholder='Reflection' {...register("Reflection")}></textarea>
                 <p>{errors.Reflection?.message}</p>
-                <h3>Choose a file:</h3>
-                <input type="file" />
                 <input type="submit" value= "SAVE" />
             </form>
         </div>

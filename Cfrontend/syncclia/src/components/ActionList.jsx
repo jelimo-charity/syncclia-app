@@ -67,11 +67,15 @@ function ActionList() {
               {
                 showEditForm && <UpdateForm setShowEditForm = {setShowEditForm} action={tempAction} getActions={getActions}/>
               }
+              {/* const name = (params)  {
+                
+              } */}
+              
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </div> 
   );
 }
 

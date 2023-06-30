@@ -1,35 +1,63 @@
-.actionCard{
-    height: 300px;
-    border: 1px solid white;
-    padding: 5px;
-    width: 70%;
-    margin: 10px;
-}
-.title{
-    color: green;
-    font-size: 2rem;
-}
-.reflection{
-    font-size: 16px;
-}
-.cardButtons{
+.actionListWrapper {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .actionCard {
+    width: 45%;
+    margin: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .actionCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .title {
+    color: green;
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  
+  .reflection {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .cardButtons {
+    display: flex;
+    justify-content: flex-end;
     gap: 10px;
     padding: 10px;
-}
-#teamImg{
-    height: 50%;
-    width: 15%;
-    display: flex;
-    justify-content: center;
-    margin: o auto;
+  }
+  
+  #teamImg {
+    width: 100%;
+    height: auto;
     border-radius: 5px;
-
-}
-.deleteBtn{
+  }
+  
+  .deleteBtn {
     color: red;
-}
-.editBtn{
+    cursor: pointer;
+  }
+  
+  .editBtn {
     color: green;
-}
+    cursor: pointer;
+  }
+  
+  /* Responsive Styles */
+  
+  @media only screen and (max-width: 768px) {
+    .actionCard {
+      width: 90%;
+    }
+  }
+  

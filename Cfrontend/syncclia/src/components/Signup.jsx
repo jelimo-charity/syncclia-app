@@ -40,17 +40,17 @@ export function Signup() {
   return (
     <div className='container'>
 
-        <div id="formField">
-            <form className="form" onSubmit={handleSubmit(onSubmit)}>
+        <div id="signupFormField">
+            <form className="signupForm" onSubmit={handleSubmit(onSubmit)}>
                 <h2>Welcome to SyncCliA!</h2>
 
-                <input type="text" placeholder='Username' { ...register("Username") } /><br/>
+                <input className='signupInput' type="text" placeholder='Username' { ...register("Username") } /><br/>
                 <p>{errors.Username?.message}</p>
-                <input type="email" placeholder='Email' { ...register ("Email")} /><br/>
+                <input className="signupInput" type="email" placeholder='Email' { ...register ("Email")} /><br/>
                 <p>{errors.Email?.message}</p>
-                <input type="password" placeholder='Password' { ...register("Password")} />
+                <input className ='signupInput' type="password" placeholder='Password' { ...register("Password")} />
                   <p>{errors.Password?.message}</p>
-                <input type="submit" value="Submit" id='btn'/>
+                <input type="submit" value="Submit" id='signupbtn'/>
             </form>
         </div>
       

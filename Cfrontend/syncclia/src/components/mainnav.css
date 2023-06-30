@@ -1,8 +1,14 @@
-.mainnav{
+.mainnav {
     float: left;
     width: 100%;
-}
-.header{
-    /* color: green; */
-    font-size: 3rem;
-}
+  }
+  
+  .header {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+    /* padding: 20px; */
+  }
+  
